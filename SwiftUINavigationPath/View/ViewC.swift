@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ViewC: View {
     @EnvironmentObject var viewModel: MainViewModel
-
     var body: some View {
         Text("Hello, ViewC!")
+        Button {
+            viewModel.pop()
+        } label: {
+            Text("Back")
+        }
     }
 }
 

@@ -12,6 +12,11 @@ struct ViewB: View {
 
     var body: some View {
         Text("Hello, ViewB!")
+        Button {
+            viewModel.pop()
+        } label: {
+            Text("Back")
+        }
     }
 }
 
