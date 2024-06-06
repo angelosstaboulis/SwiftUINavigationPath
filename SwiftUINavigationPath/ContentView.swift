@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel:MainViewModel
-
+    
     var body: some View {
         NavigationStack(path:$viewModel.path){
             VStack {
@@ -37,7 +37,6 @@ struct ContentView: View {
         }
     }
 }
-
 #Preview {
     ContentView(viewModel: .init())
 }

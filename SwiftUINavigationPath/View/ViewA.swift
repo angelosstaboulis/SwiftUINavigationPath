@@ -9,15 +9,27 @@ import SwiftUI
 
 struct ViewA: View {
     @EnvironmentObject var viewModel: MainViewModel
-
+    
     var body: some View {
-        Text("Hello ViewA!")
-        Button {
-            viewModel.pop()
-        } label: {
-            Text("Back")
-        }
-
+        VStack{
+            ZStack(alignment: .topLeading, content: {
+                
+                Button {
+                    viewModel.pop()
+                } label: {
+                    Text("Back to Main View")
+                }
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text("Hello ViewA!")
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    Spacer()
+                }
+            }).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+           
+        }.navigationBarBackButtonHidden()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
