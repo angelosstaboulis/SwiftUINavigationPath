@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct BackButton: View {
+    @EnvironmentObject var viewModel: MainViewModel
+    @State var caption:String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+                viewModel.pop()
+            } label: {
+                Text(caption).background {
+                    Rectangle().frame(width:150,height:45)
+                        .foregroundStyle(.blue)
+                        .clipShape(.capsule)
+                }.foregroundStyle(.white)
+                .padding(15)
+            }
     }
 }
 
 #Preview {
-    BackButton()
+    BackButton(caption: "")
 }

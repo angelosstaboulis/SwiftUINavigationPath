@@ -13,11 +13,8 @@ struct ViewC: View {
     var body: some View {
         VStack{
             ZStack(alignment: .topLeading, content: {
-                Button {
-                    viewModel.pop()
-                } label: {
-                    Text("Back to Main View")
-                }
+                BackButton(caption: "Back to Main View")
+
                 HStack {
                     Spacer()
                     VStack {
